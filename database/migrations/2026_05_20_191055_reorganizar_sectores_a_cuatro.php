@@ -10,8 +10,8 @@ return new class extends Migration
     {
         // Las migraciones ya manejan transacciones automáticamente
         
-        // DESACTIVAR CHECKS DE FOREIGN KEYS
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        // POSTGRESQL: Desactivar foreign keys (diferente a MySQL)
+        DB::statement('SET CONSTRAINTS ALL DEFERRED');
         
         // 1. BORRAR DATOS (tablas dependientes primero)
         DB::table('entradas')->truncate();
@@ -19,9 +19,6 @@ return new class extends Migration
         DB::table('precios')->truncate();
         DB::table('asientos')->truncate();
         DB::table('sectores')->truncate();
-        
-        // REACTIVAR CHECKS
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
         
         // 2. CREAR 4 NUEVOS SECTORES
         $sectores = [
