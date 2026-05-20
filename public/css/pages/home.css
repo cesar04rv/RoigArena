@@ -1,0 +1,101 @@
+/* home.css – hero portada */
+
+.home-hero {
+  position: relative;
+  min-height: calc(100dvh - var(--nav-height));
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: clamp(2.5rem, 8vw, 5.5rem) clamp(1.25rem, 7vw, 5.5rem);
+  gap: 1.25rem;
+  overflow: hidden;
+  color: #fff;
+  background-image:
+    linear-gradient(160deg, rgba(0, 0, 0, 0.82) 0%, rgba(4, 6, 14, 0.56) 40%, rgba(4, 6, 12, 0.2) 70%),
+    url('/images/roig-arena-home2.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.home-hero::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: clamp(160px, 35vh, 300px);
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(17, 17, 16, 0.96) 0%, transparent 100%);
+}
+
+.home-hero > * {
+  position: relative;
+  z-index: 1;
+  max-width: min(700px, 100%);
+}
+
+.home-hero-kicker {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  background: rgba(245, 48, 3, 0.12);
+  border: 1px solid rgba(245, 48, 3, 0.28);
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  margin: 0;
+}
+
+.home-hero-title {
+  font-size: clamp(2.2rem, 5.5vw, 4.2rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  margin: 0;
+  color: #ffffff;
+  text-wrap: balance;
+}
+
+.home-hero-text {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: clamp(0.97rem, 2vw, 1.14rem);
+  line-height: 1.68;
+  margin: 0;
+  max-width: 58ch;
+  font-weight: 400;
+}
+
+.home-hero-actions {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.home-hero-actions .btn {
+  font-size: 0.93rem;
+  font-weight: 700;
+  padding: 0.78rem 1.8rem;
+}
+
+@media (max-width: 768px) {
+  .home-hero {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: clamp(2.5rem, 14vw, 4rem) 1.25rem;
+    background-position: 68% center;
+  }
+
+  .home-hero > * {
+    max-width: min(520px, 100%);
+  }
+
+  .home-hero-actions {
+    justify-content: center;
+    width: 100%;
+  }
+}
+

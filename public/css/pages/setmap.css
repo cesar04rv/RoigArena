@@ -1,0 +1,294 @@
+/* setmap.css – estilos legacy de mapa de asientos alineados al tema global */
+
+.seatmap-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 360px);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.seatmap-area,
+.checkout-sidebar {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.seatmap-area {
+  padding: 1.5rem;
+}
+
+.seatmap-area h2 {
+  margin: 0 0 1rem;
+  color: var(--color-primary);
+  font-size: 1.08rem;
+}
+
+.stadium-layout {
+  margin: 0 auto 1.25rem;
+  max-width: 900px;
+}
+
+.stadium-view {
+  position: relative;
+  width: min(100%, 900px);
+  display: grid;
+  gap: 0.75rem;
+  margin: 0 auto;
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, #121e2d 0%, #0d1520 48%, #0a1018 100%);
+  padding: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 14px 30px rgba(0, 0, 0, 0.34);
+}
+
+.sector-group {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sector-group:last-child {
+  margin-bottom: 0;
+}
+
+.sector-title {
+  margin: 0 0 0.45rem;
+  color: var(--color-accent);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.sector-stats {
+  margin: 0 0 0.9rem;
+  color: var(--color-muted);
+  font-size: 0.82rem;
+}
+
+.seats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 32px);
+  gap: 5px;
+}
+
+.seat {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.74rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border: 1px solid transparent;
+}
+
+.seat-available {
+  background: #1f7a58;
+  border-color: #4fc28b;
+  color: #d8f3e9;
+}
+
+.seat-available:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 0 2px rgba(79, 194, 139, 0.45);
+}
+
+.seat-reserved,
+.seat-occupied {
+  cursor: not-allowed;
+}
+
+.seat-reserved {
+  background: #553235;
+  border-color: #c96a71;
+  color: #f6ced3;
+  opacity: 0.68;
+}
+
+.seat-selected {
+  background: var(--color-accent);
+  border-color: #ffb09c;
+  color: #fff;
+  box-shadow: 0 0 0 2px rgba(245, 48, 3, 0.35);
+}
+
+.seat-occupied {
+  background: #3a3a37;
+  border-color: #585854;
+  color: #9d9d99;
+  opacity: 0.72;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-bottom: 1.1rem;
+  padding: 0.7rem 0.9rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+.checkout-sidebar {
+  position: sticky;
+  top: calc(var(--nav-height) + 1rem);
+  padding: 1.2rem;
+  height: fit-content;
+}
+
+.checkout-header {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.9rem;
+  margin-bottom: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+}
+
+.checkout-header h3 {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: 0.97rem;
+}
+
+.seat-count {
+  color: var(--color-muted);
+  font-size: 0.8rem;
+}
+
+.selection-summary {
+  margin-bottom: 0.75rem;
+  max-height: 220px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+.selected-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.45rem;
+  padding: 0.6rem 0.7rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-light);
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 0.82rem;
+}
+
+.selected-item-remove {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: var(--color-muted);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  padding: 0 0.2rem;
+}
+
+.selected-item-remove:hover {
+  color: #ff7a5a;
+  border-color: rgba(245, 48, 3, 0.22);
+  background: rgba(245, 48, 3, 0.12);
+}
+
+.price-breakdown {
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.75rem 0;
+  margin: 0.75rem 0;
+}
+
+.price-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  margin: 0.3rem 0;
+}
+
+.price-line-total {
+  color: var(--color-accent);
+  font-size: 0.97rem;
+  font-weight: 700;
+}
+
+.total-section {
+  text-align: center;
+  margin: 1rem 0 1.25rem;
+}
+
+.total-label {
+  margin: 0 0 0.35rem;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+}
+
+.total-amount {
+  margin: 0;
+  color: var(--color-accent);
+  font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.checkout-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--color-muted);
+  padding: 1.25rem 0.5rem;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 1024px) {
+  .seatmap-container {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .seatmap-area,
+  .checkout-sidebar {
+    padding: 1rem;
+  }
+
+  .seats-grid {
+    grid-template-columns: repeat(auto-fill, 28px);
+    gap: 4px;
+  }
+
+  .seat {
+    width: 28px;
+    height: 28px;
+    font-size: 0.68rem;
+  }
+}
