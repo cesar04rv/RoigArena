@@ -33,7 +33,7 @@
 
         <div class="form-group">
             <label class="form-label" for="nombre">Nombre del evento</label>
-            <input id="nombre" name="nombre" type="text" class="form-control" value="{{ old('nombre') }}" required placeholder="Ej: Final Copa del Rey">
+            <input id="nombre" name="nombre" type="text" class="form-control" value="{{ old('nombre') }}" required placeholder="Ej: Campeonato de ajedrez">
         </div>
 
         <div class="form-group">
