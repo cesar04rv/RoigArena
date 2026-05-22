@@ -192,7 +192,3 @@ RoigArena/
 ├── Dockerfile.render           Imagen Docker para Render
 └── render.yaml                 Configuración del servicio en Render
 ```
-
-## Licencia
-
-Proyecto académico desarrollado como práctica final. Uso educativo.
